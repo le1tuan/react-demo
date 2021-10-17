@@ -1,7 +1,7 @@
 ## Quick start
 
-- Install dependencies: `npm install` or `yarn`
+- Install dependencies: `yarn`
 
-- Start the server: `npm run start` or `yarn start`
+- Start the server: `yarn start`
 
 - Views are on: `localhost:3000`
