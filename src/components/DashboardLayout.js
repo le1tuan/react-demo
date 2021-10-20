@@ -39,14 +39,27 @@ const DashboardLayoutContent = styled('div')({
 });
 
 const DashboardLayout = () => {
+  const drawerWidth = 240;
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleToggle = () => {
+    setOpen((current) => !current);
+  };
 
   return (
     <DashboardLayoutRoot>
-      <DashboardNavbar onMobileNavOpen={() => setMobileNavOpen(true)} />
+      <DashboardNavbar
+        onMobileNavOpen={() => setMobileNavOpen(true)}
+        drawerWidth={drawerWidth}
+        open={open}
+        handleToggle={handleToggle}
+      />
       <DashboardSidebar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}
+        drawerWidth={drawerWidth}
+        open={open}
       />
       <DashboardLayoutWrapper>
         <DashboardLayoutContainer>

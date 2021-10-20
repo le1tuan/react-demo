@@ -6,10 +6,10 @@ import {
   Box,
   Button,
   Divider,
-  Drawer,
+  Drawer as MuiDrawer,
   Hidden,
   List,
-  Typography
+  Typography,
 } from '@material-ui/core';
 import {
   AlertCircle as AlertCircleIcon,
@@ -21,7 +21,12 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon
 } from 'react-feather';
+import { styled, useTheme } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import { ChevronRight, ChevronLeft } from '@material-ui/icons';
 import NavItem from './NavItem';
+
+const drawerWidth = 240;
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
@@ -72,8 +77,57 @@ const items = [
   }
 ];
 
-const DashboardSidebar = ({ onMobileClose, openMobile }) => {
+// Style
+const openedMixin = (theme) => ({
+  width: drawerWidth,
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: 'hidden',
+});
+
+const closedMixin = (theme) => ({
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: 'hidden',
+  width: `calc(${theme.spacing(7)} + 1px)`,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(${theme.spacing(9)} + 1px)`,
+  },
+});
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));
+
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+    boxSizing: 'border-box',
+    ...(open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
+  })
+);
+
+const DashboardSidebar = ({ onMobileClose, openMobile, open }) => {
   const location = useLocation();
+  const theme = useTheme();
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -89,7 +143,7 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
         height: '100%'
       }}
     >
-      <Box
+      {/* <Box
         sx={{
           alignItems: 'center',
           display: 'flex',
@@ -120,19 +174,17 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
           {user.jobTitle}
         </Typography>
       </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <List>
-          {items.map((item) => (
-            <NavItem
-              href={item.href}
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))}
-        </List>
-      </Box>
+      <Divider /> */}
+      <List>
+        {items.map((item) => (
+          <NavItem
+            href={item.href}
+            key={item.title}
+            title={item.title}
+            icon={item.icon}
+          />
+        ))}
+      </List>
       <Box sx={{ flexGrow: 1 }} />
       <Box
         sx={{
@@ -179,31 +231,45 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
       <Hidden lgUp>
         <Drawer
           anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          PaperProps={{
-            sx: {
-              width: 256
-            }
-          }}
+          variant="permanent"
+          open={open}
+          // onClose={onMobileClose}
+          // open={openMobile}
+          // variant="temporary"
+          // PaperProps={{
+          //   sx: {
+          //     width: 256
+          //   }
+          // }}
         >
+          <DrawerHeader>
+            <IconButton>
+              {theme.direction === 'rtl' ? <ChevronRight /> : <ChevronLeft />}
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
           {content}
         </Drawer>
       </Hidden>
       <Hidden xlDown>
         <Drawer
-          anchor="left"
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: 256,
-              top: 64,
-              height: 'calc(100% - 64px)'
-            }
-          }}
+          // anchor="left"
+          open={open}
+          variant="permanent"
+          // PaperProps={{
+          //   sx: {
+          //     width: 256,
+          //     top: 64,
+          //     height: 'calc(100% - 64px)'
+          //   }
+          // }}
         >
+          <DrawerHeader>
+            <IconButton>
+              {theme.direction === 'rtl' ? <ChevronRight /> : <ChevronLeft />}
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
           {content}
         </Drawer>
       </Hidden>
