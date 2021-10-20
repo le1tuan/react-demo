@@ -74,6 +74,11 @@ const items = [
     href: '/404',
     icon: AlertCircleIcon,
     title: 'Error'
+  },
+  {
+    href: '/app/v3/defi-dashboard',
+    icon: AlertCircleIcon,
+    title: 'DV3'
   }
 ];
 
