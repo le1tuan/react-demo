@@ -1,0 +1,56 @@
+.MuiOutlinedInput-input {
+    padding: 10px !important;
+    font-size: 14px;
+}
+
+.MuiOutlinedInput-root {
+    border-radius: 8px;
+}
+
+.stateButton {
+    font-size: 70%;
+    padding-right: 5px;
+    padding-top: 2px;
+}
+
+.statusText {
+    width: 100px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 16px;
+    background: #fff59d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+hr {
+    margin: 8px 0;
+}
+
+.labelIcon {
+    height: 55px;
+    width: 55px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.circular {
+    width: 140px;
+    height: 140px;
+    background-color: #f6f6f6;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-color-text {
+    color: #2196f3;
+}
+
+.primary-color-background {
+    background-color: #2196f3;
+}
