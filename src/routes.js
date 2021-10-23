@@ -9,7 +9,9 @@ import NotFound from './pages/NotFound';
 import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
-import DashboardDx from './pages/DxLaunch/Dashboard'
+import DashboardDx from './pages/DxLaunch/Dashboard';
+import DashboardDxDetail from './pages/DxLaunch/DashboardDetail';
+
 const routes = [
   {
     path: 'app',
@@ -21,6 +23,7 @@ const routes = [
       { path: 'products', element: <ProductList /> },
       { path: 'settings', element: <Settings /> },
       { path: 'v3/defi-dashboard', element: <DashboardDx /> },
+      { path: 'v3/defipresale', element: <DashboardDxDetail /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
