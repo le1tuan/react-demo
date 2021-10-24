@@ -10,6 +10,7 @@ import {
   XCircle as XCircleIcon,
   ExternalLink as ExternalLinkIcon
 } from 'react-feather';
+import { useNavigate  } from 'react-router-dom';
 import './Dashboard.css';
 import ManageSale from '../../components/common/ManageSale';
 import fakeData from './fakeData';
@@ -117,6 +118,8 @@ export default function Dashboard() {
     }
   };
 
+  const history = useNavigate();
+
   return (
     <div className="" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div>
@@ -171,7 +174,18 @@ export default function Dashboard() {
         <Grid container>
           {
             fakeData && fakeData.map((data) => (
-              <Grid item xl={3} lg={3} md={4} sm={12} xs={12} style={styles.paperPadding}>
+              <Grid
+                item
+                xl={3}
+                lg={3}
+                md={4}
+                sm={12}
+                xs={12}
+                style={styles.paperPadding}
+                onClick={() => {
+                  history('/app/v3/defipresale');
+                }}
+              >
                 <PaperContainer elevation={0}>
                   <div style={{
                     display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', marginBottom: '40px'

@@ -51,7 +51,8 @@ const theme = createTheme({
     h2: {
       fontWeight: 500,
       fontSize: 29,
-      letterSpacing: '-0.24px'
+      letterSpacing: '-0.24px',
+      fontFamily: 'Open Sans,sans-serif',
     },
     h3: {
       fontWeight: 500,
@@ -75,6 +76,9 @@ const theme = createTheme({
     },
     overline: {
       fontWeight: 500
+    },
+    p: {
+      fontFamily: 'Open Sans,sans-serif',
     }
   }
 });
