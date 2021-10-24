@@ -1,5 +1,7 @@
 import React from 'react';
-import { Grid, Paper, Typography } from '@material-ui/core';
+import {
+  Button, Grid, Paper, Typography
+} from '@material-ui/core';
 import {
   VictoryPie, VictoryContainer, VictoryLegend, VictoryTooltip,
 } from 'victory';
@@ -8,6 +10,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import Public from '@material-ui/icons/Public';
 import Telegram from '@material-ui/icons/Telegram';
 import theme from './themeChart';
+import GroupButton from './components/GroupButton';
 
 const CustomPaper = styled(Paper)`
 box-shadow: 0px 1px 3px 0px rgb(142 142 142 / 20%), 0px 1px 1px 0px rgb(243 243 243 / 14%), 0px 2px 1px -1px rgb(204 204 204 / 12%);
@@ -18,6 +21,12 @@ border-radius: 8px
 
 const DashboardDetail = () => (
   <div style={{ padding: 16 }}>
+    <div style={{
+      width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 5
+    }}
+    >
+      <GroupButton />
+    </div>
     <Paper elevation={0} style={{ width: '100%', padding: 20, backgroundColor: 'rgb(249, 249, 249)' }}>
       <Grid container spacing={3}>
         <Grid item xl={3} lg={3} md={3} sm={3} xs={12}>
@@ -58,7 +67,7 @@ const DashboardDetail = () => (
                   theme={theme}
                   standalone={false}
                   labelComponent={<VictoryTooltip />}
-                  // labels={() => ''}
+                // labels={() => ''}
                 />
                 <VictoryLegend
                   data={[{ name: 'Burn: 1%' }, { name: 'DxLock: 0%' }, { name: 'Presale: 0%' }, { name: 'Liquidity: 0%' }, { name: 'Unlocked: 99%' }]}
@@ -159,13 +168,135 @@ const DashboardDetail = () => (
                 <TwitterIcon style={{ marginLeft: 25, fontSize: 21 }} />
                 <Telegram style={{ marginLeft: 25, fontSize: 21 }} />
               </div>
+              <hr style={{
+                margin: '1.5em 0',
+                borderBottom: '1px solid #E0E0E0',
+                borderLeft: 0,
+                borderRight: 0,
+                borderTop: 0,
+                height: 0
+              }}
+              />
+              <div style={{ textAlign: 'center' }}>
+                <Typography variant="body1">Sale Starts in: </Typography>
+                <Typography variant="body1">18905501:19:46:23</Typography>
+              </div>
+              <hr style={{
+                margin: '1.5em 0',
+                borderBottom: '1px solid #E0E0E0',
+                borderLeft: 0,
+                borderRight: 0,
+                borderTop: 0,
+                height: 0
+              }}
+              />
+              <div style={{ textAlign: 'center' }}>
+                <Grid
+                  container
+                  spacing={1}
+                >
+                  <Grid item xl={6} lg={6} md={6} sm={6} xs={12}>
+                    <CustomPaper style={{ padding: 10, textAlign: 'center', fontSize: '13px' }}>
+                      Your Contributed Amount:
+                      <br />
+                      0.00 BNB
+                    </CustomPaper>
+                  </Grid>
+                  <Grid item xl={6} lg={6} md={6} sm={6} xs={12}>
+                    <CustomPaper style={{ padding: 10, textAlign: 'center', fontSize: '13px' }}>
+                      Your Contributed Amount:
+                      <br />
+                      0
+                    </CustomPaper>
+                  </Grid>
+                </Grid>
+                <br />
+                <Button
+                  variant="contained"
+                  disabled
+                  style={{
+                    backgroundColor: 'grey',
+                    color: 'black',
+                    marginTop: '1px',
+                    opacity: '0.5',
+                    borderRadius: 20,
+
+                  }}
+                >
+                  EMERGENCY WITHDRAW
+                </Button>
+              </div>
             </div>
           </Paper>
         </Grid>
         <Grid item xl={3} lg={3} md={3} sm={4} xs={12}>
-          <Paper>
-            aaaa
-          </Paper>
+          <CustomPaper
+            elevation={0}
+            style={{
+              padding: 20,
+              fontSize: '85%',
+              marginBottom: 20,
+              backgroundImage: "url('https://dxsale.app/79d713639af650cbe77666e944c6ab16.png')",
+              backgroundColor: 'transparent',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              boxShadow: 'none'
+            }}
+          >
+            <div style={{ fontSize: '120%', textAlign: 'center' }}>
+              <strong>Token Sale Details</strong>
+            </div>
+            <div style={{ width: '100%', margin: '1.5em 0' }}>
+              <div style={{ display: 'flex', width: '100%', borderBottom: '1px solid #E0E0E0' }}>
+                <div style={{
+                  flexBasis: '50%',
+                  flexGrow: 0,
+                  flexShrink: 0,
+                  padding: 12,
+                  textAlign: 'right'
+                }}
+                >
+                  Presale Address
+                </div>
+                <div
+                  style={{
+                    flexBasis: '50%',
+                    flexGrow: 0,
+                    flexShrink: 0,
+                    padding: 12,
+                    textAlign: 'left'
+                  }}
+                  align="left"
+                >
+                  Waiting For Deposit!
+                </div>
+              </div>
+              <div style={{ display: 'flex', width: '100%', borderBottom: '1px solid #E0E0E0' }}>
+                <div style={{
+                  flexBasis: '50%',
+                  flexGrow: 0,
+                  flexShrink: 0,
+                  padding: 12,
+                  textAlign: 'right'
+                }}
+                >
+                  Token Address
+                </div>
+                <div
+                  style={{
+                    flexBasis: '50%',
+                    flexGrow: 0,
+                    flexShrink: 0,
+                    padding: 12,
+                    textAlign: 'left'
+                  }}
+                  align="left"
+                >
+                  <a href="https://bscscan.com/address/0x" target="_blank" rel="noreferrer">0x...0x</a>
+                </div>
+              </div>
+            </div>
+          </CustomPaper>
         </Grid>
       </Grid>
     </Paper>
