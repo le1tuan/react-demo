@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
+import ClientPage from './components/client/ClientPage';
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
       { path: '/', element: <Navigate to="/app/dashboard" /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
+  },
+  {
+    path: 'aaa',
+    element: <ClientPage />
   }
 ];
 
