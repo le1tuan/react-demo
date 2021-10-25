@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col, NavLink } from 'react-bootstrap';
+import { NavLink } from 'react-bootstrap';
 import './css/LeftSideClientPage.css';
 
 const LeftSideClientPage = () => {
@@ -29,21 +29,18 @@ const LeftSideClientPage = () => {
     setSixOpen(!sixOpen);
   };
   return (
-    <Row className="p-0 left-size-main" style={{ maxWidth: '240px', backgroundColor: 'white' }}>
-      <Col
-        xs
-        lg={12}
-        className="left-header"
+    <div className="left-size-main" style={{ maxWidth: '240px', backgroundColor: 'white' }}>
+
+      <NavLink
+        className="d-flex justify-content-center align-items-center p-0"
         style={{
           width: '228px', height: '48px', padding: '8px 0 8px 24px', margin: '8px 0', cursor: 'pointer', fontWeight: 'bold'
         }}
       >
-        <NavLink className="d-flex justify-content-center align-items-center p-0">
-          <div className="text-black">Dx</div>
-          <div className="text-danger">Version 3.1</div>
-        </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0">
+        <div className="text-black">Dx</div>
+        <div className="text-danger">Version 3.1</div>
+      </NavLink>
+      <div style={{ padding: '16px 12px 40px 0' }}>
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -52,7 +49,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5,
@@ -61,8 +58,6 @@ const LeftSideClientPage = () => {
           <div style={{ width: '22px', marginRight: '18px' }} className="nav-item-icon"><i className="fas fa-home" /></div>
           <div style={{ width: '140px' }} className="nav-item-text">Home</div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0">
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -71,7 +66,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -80,8 +75,6 @@ const LeftSideClientPage = () => {
           <div style={{ width: '22px', marginRight: '18px' }} className="nav-item-icon"><i className="fas fa-home" /></div>
           <div style={{ width: '140px' }} className="nav-item-text">DxMint</div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0">
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -90,7 +83,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -99,8 +92,6 @@ const LeftSideClientPage = () => {
           <div style={{ width: '22px', marginRight: '18px' }} className="nav-item-icon"><i className="fas fa-home" /></div>
           <div style={{ width: '140px' }} className="nav-item-text">DxDrop</div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0">
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -109,7 +100,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -122,15 +113,13 @@ const LeftSideClientPage = () => {
             {firstOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0">
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
             width: '228px',
             height: '48px',
             padding: '8px 0 8px 24px',
-            fontSize: '18px',
+            fontSize: '16px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
             color: '#777777',
@@ -145,8 +134,6 @@ const LeftSideClientPage = () => {
             {secondOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0 align-items-center">
         <NavLink
           className="item-nav d-flex"
           style={{
@@ -155,7 +142,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -168,8 +155,6 @@ const LeftSideClientPage = () => {
             {thirdOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0 align-items-center">
         <NavLink
           className="item-nav d-flex"
           style={{
@@ -178,7 +163,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -191,8 +176,6 @@ const LeftSideClientPage = () => {
             {fourOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0 align-items-center">
         <NavLink
           className="item-nav d-flex"
           style={{
@@ -201,7 +184,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -214,8 +197,6 @@ const LeftSideClientPage = () => {
             {fiveOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-      <Col xs lg={12} className="p-0 align-items-center">
         <NavLink
           className="item-nav d-flex"
           style={{
@@ -224,7 +205,7 @@ const LeftSideClientPage = () => {
             padding: '8px 0 8px 24px',
             margin: '8px 0',
             borderRadius: '0 24px 24px 0',
-            fontSize: '18px',
+            fontSize: '16px',
             color: '#777777',
             fontWeight: 400,
             lineHeight: 1.5
@@ -237,8 +218,8 @@ const LeftSideClientPage = () => {
             {sixOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 export default LeftSideClientPage;
