@@ -1,5 +1,6 @@
 import { NavLink } from 'react-bootstrap';
 import './css/RightSideClientPage.css';
+import RightSideBody from './ClientChild/RightSideBody';
 
 const RightSideClientPage = () => (
   <div className="p-0 right-size-main w-100">
@@ -15,10 +16,15 @@ const RightSideClientPage = () => (
             width: 0, height: '20px', border: '1px solid #6eb4ec', margin: '0 10px'
           }}
           />
-          <NavLink className="nav-item-icon" style={{ padding: '12px', width: '46px' }}>
+          <NavLink className="nav-item-icon" style={{ padding: '12px', width: '46px', height: '46px' }}>
             <i className="fas fa-paper-plane" />
           </NavLink>
-          <NavLink className="nav-item-icon" style={{ marginRight: '15px', padding: '12px', width: '46px' }}>
+          <NavLink
+            className="nav-item-icon"
+            style={{
+              marginRight: '15px', padding: '12px', width: '46px', height: '46px'
+            }}
+          >
             <i className="fas fa-paper-plane" />
           </NavLink>
           <NavLink style={{
@@ -29,14 +35,14 @@ const RightSideClientPage = () => (
             <span>$1.11</span>
           </NavLink>
           <NavLink
-            className="link-buy"
+            className="link-buy text-center"
             style={{
-              width: '83.14px', margin: '0 15px 0 5px', backgroundColor: '#00bfa5', padding: '6px 16px'
+              width: '83.14px', margin: '0 15px 0 5px', backgroundColor: '#00bfa5', paddingTop: '2px', height: '31px'
             }}
           >
             <span style={{
               color: 'white',
-              fontSize: '12px',
+              fontSize: '11px',
               fontWeight: 600,
               lineHeight: 1.75,
             }}
@@ -47,6 +53,7 @@ const RightSideClientPage = () => (
         </div>
       </div>
     </div>
+    <RightSideBody />
   </div>
 );
 export default RightSideClientPage;
