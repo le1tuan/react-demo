@@ -9,6 +9,9 @@ import NotFound from './pages/NotFound';
 import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
+import PageList from './pages/PageList'
+import PageDetail from './pages/PageList/PageDetail';
+import PageCreateForm from './pages/PageList/PageCreateForm';
 
 const routes = [
   {
@@ -32,6 +35,15 @@ const routes = [
       { path: '404', element: <NotFound /> },
       { path: '/', element: <Navigate to="/app/dashboard" /> },
       { path: '*', element: <Navigate to="/404" /> }
+    ]
+  },
+  {
+    path: '/admin',
+    element: <DashboardLayout />,
+    children: [
+      { path: 'page', element: <PageList /> },
+      { path: 'page/:id', element: <PageDetail /> },
+      { path: 'create/page', element: <PageCreateForm /> }
     ]
   }
 ];
