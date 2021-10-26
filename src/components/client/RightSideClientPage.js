@@ -1,6 +1,7 @@
 import { NavLink } from 'react-bootstrap';
 import './css/RightSideClientPage.css';
 import RightSideBody from './ClientChild/RightSideBody';
+import RightSideMain from './ClientChild/RightSideMain';
 
 const RightSideClientPage = () => (
   <div className="p-0 right-size-main w-100">
@@ -54,6 +55,7 @@ const RightSideClientPage = () => (
       </div>
     </div>
     <RightSideBody />
+    <RightSideMain />
   </div>
 );
 export default RightSideClientPage;

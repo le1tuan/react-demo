@@ -11,7 +11,7 @@ const RightSideBody = () => (
         fontWeight: '600',
         lineHeight: '1.75',
         fontSize: '13.2px',
-          letterSpacing: '0.5px'
+        letterSpacing: '0.5px'
       }}
     >
       <div style={{

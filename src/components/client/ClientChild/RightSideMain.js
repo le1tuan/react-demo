@@ -1,12 +1,10 @@
 import RightSideLeftMain from './RightSideLeftMain';
 import RightSideRightMain from './RightSideRightMain';
 
-const RightSideMain = () => {
-    return (
-        <div>
-            <RightSideLeftMain />
-            <RightSideRightMain />
-        </div>
-    )
-}
+const RightSideMain = () => (
+  <div className="d-flex">
+    <RightSideLeftMain />
+    <RightSideRightMain />
+  </div>
+);
 export default RightSideMain;
