@@ -4,27 +4,32 @@ const RightSideLeftMain = () => (
       <div>Dx</div>
       <div>DYOR Area</div>
     </div>
-    <div>
-      <div>Distribution</div>
+    <div className="d-flex">
+      <div style={{
+        width: '184.44px', height: '184.44px', backgroundColor: 'white', border: '10px solid orange', borderRadius: '50%'
+      }}
+      >
+        Distribution
+      </div>
       <div>
-        <div>
-          <div />
+        <div className="d-flex">
+          <div style={{ width: '9.46px', height: '9.46px', backgroundColor: '#0066CC' }} />
           <div>Bum: 0%</div>
         </div>
-        <div>
-          <div />
+        <div className="d-flex">
+          <div style={{ width: '9.46px', height: '9.46px', backgroundColor: '#4CB140' }} />
           <div>DxLock: 0%</div>
         </div>
-        <div>
-          <div />
+        <div className="d-flex">
+          <div style={{ width: '9.46px', height: '9.46px', backgroundColor: '#009596' }} />
           <div>Presale: 0%</div>
         </div>
-        <div>
-          <div />
+        <div className="d-flex">
+          <div style={{ width: '9.46px', height: '9.46px', backgroundColor: '#F4C145' }} />
           <div>Liquidity: 0%</div>
         </div>
-        <div>
-          <div />
+        <div className="d-flex">
+          <div style={{ width: '9.46px', height: '9.46px', backgroundColor: '#EC7A08' }} />
           <div>Unlocked: 100%</div>
         </div>
       </div>
