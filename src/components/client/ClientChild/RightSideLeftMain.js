@@ -13,7 +13,7 @@ const RightSideLeftMain = () => (
       <div
         className="d-flex align-items-center justify-content-center"
         style={{
-          width: '176.44px', height: '176.44px', backgroundColor: 'white', border: '8px solid #ec7a08', borderRadius: '50%', color: '#F8F8F8', fontSize: '14px'
+          width: '176.44px', height: '176.44px', backgroundColor: 'white', border: '8px solid #ec7a08', borderRadius: '50%', color: '#d2d4d6', fontSize: '14px'
         }}
       >
         Distribution

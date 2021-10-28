@@ -34,7 +34,7 @@ const LeftSideClientPage = () => {
       <NavLink
         className="d-flex justify-content-center align-items-center p-0"
         style={{
-          width: '228px', height: '48px', padding: '8px 0 8px 24px', margin: '8px 0', cursor: 'pointer', fontWeight: 'bold'
+          width: '228px', height: '48px', padding: '16px 0 16px 24px', cursor: 'pointer', fontWeight: 'bold', backgroundColor: '#E6F6FF'
         }}
       >
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEzNCIgdmlld0JveD0iMCAwIDEzNCAxMzQiPgogIDxkZWZzPgogICAgPGZpbHRlciBpZD0iUmVjdGFuZ2xlXzEiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTM0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8ZmVPZmZzZXQgZHk9IjMiIGlucHV0PSJTb3VyY2VBbHBoYSIvPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzIiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMC4xNjEiLz4KICAgICAgPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJibHVyIi8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxnIGlkPSJHcm91cF8zIiBkYXRhLW5hbWU9Ikdyb3VwIDMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIgLTIpIj4KICAgIDxnIGlkPSJHcm91cF8xIiBkYXRhLW5hbWU9Ikdyb3VwIDEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcgOCkiPgogICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAtOSwgLTYpIiBmaWx0ZXI9InVybCgjUmVjdGFuZ2xlXzEpIj4KICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzEtMiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMSIgd2lkdGg9IjExNiIgaGVpZ2h0PSIxMTYiIHJ4PSIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOSA2KSIgZmlsbD0iI2ZmZiIvPgogICAgICA8L2c+CiAgICAgIDxnIGlkPSJHcm91cF8xLTIiIGRhdGEtbmFtZT0iR3JvdXAgMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYuMjYxIDM1LjUyNCkiIG9wYWNpdHk9IjAuOTk5IiBzdHlsZT0iaXNvbGF0aW9uOiBpc29sYXRlIj4KICAgICAgICA8dGV4dCBpZD0iRHgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjI2MSAzNi40NzYpIiBmb250LXNpemU9IjQ1IiBmb250LWZhbWlseT0iQmFobnNjaHJpZnQiIGZvbnQtd2VpZ2h0PSI2MDAiPjx0c3BhbiB4PSIwIiB5PSIwIj5EeDwvdHNwYW4+PC90ZXh0PgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" style={{ width: '30px', height: '30px', marginRight: '10px' }} alt="icon" />
@@ -56,7 +56,7 @@ const LeftSideClientPage = () => {
             lineHeight: 1.5,
           }}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -86,7 +86,7 @@ const LeftSideClientPage = () => {
             lineHeight: 1.5
           }}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -116,7 +116,7 @@ const LeftSideClientPage = () => {
             lineHeight: 1.5
           }}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -147,7 +147,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleFirstClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -181,7 +181,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleSecondClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -213,7 +213,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleThirdClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -247,7 +247,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleFourClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -281,7 +281,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleFiveClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"
@@ -315,7 +315,7 @@ const LeftSideClientPage = () => {
           }}
           onClick={handleSixClick}
         >
-          <div style={{ marginRight: '18px' }}>
+          <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
               fill="#000000"

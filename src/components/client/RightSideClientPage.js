@@ -5,7 +5,7 @@ import RightSideMain from './ClientChild/RightSideMain';
 
 const RightSideClientPage = () => (
   <div className="p-0 right-size-main w-100">
-    <div className="p-0">
+    <div className="p-0" style={{ position: 'sticky' }}>
       <div className="right-side-header d-flex align-items-center justify-content-between" style={{ height: '64px', backgroundColor: '#2196F3' }}>
         <NavLink className="nav-item-icon">
           <div>
