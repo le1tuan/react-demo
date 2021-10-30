@@ -30,6 +30,12 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "linebreak-style": "off",
+    "arrow-parens": "off",
+    "arrow-body-style": "off",
+    "semi": "off",
+    "react/prop-types": "off",
+    "object-curly-newline": "off"
   }
 }
