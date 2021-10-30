@@ -9,7 +9,7 @@ const Clock = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date('October 29, 2021 00:00:00').getTime();
+    const countdownDate = new Date('October 31, 2021 00:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -40,7 +40,7 @@ const Clock = () => {
   return (
     <div>
       <div>
-        `
+
         {timerDays}
         :
         {timerHours}
@@ -48,7 +48,7 @@ const Clock = () => {
         {timerMinutes}
         :
         {timerSeconds}
-        `
+
       </div>
     </div>
   );

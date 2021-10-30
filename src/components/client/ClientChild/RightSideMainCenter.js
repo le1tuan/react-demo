@@ -50,6 +50,74 @@ const RightSideMainCenter = () => (
         </div>
       </div>
       <Clock />
+        <div>
+            <div>
+                <div>Your Contributed Amount:</div>
+                <div>0.0 BNB</div>
+            </div>
+            <div>
+                <div>Your Reserved Token</div>
+                <div>0 WSDY</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>Sale ID</div>
+                <div>90</div>
+            </div>
+            <div>
+                <div>Total Supply</div>
+                <div>1 000 000 000 WSKY</div>
+            </div>
+            <div>
+                <div>Tokens For Presale</div>
+                <div>276 000 000 WSKY</div>
+            </div>
+            <div>
+                <div>Tokens For Liquidity</div>
+                <div>186 750 000 WSKY</div>
+            </div>
+            <div>
+                <div>Soft Cap</div>
+                <div>150 BNB</div>
+            </div>
+            <div>
+                <div>Hard Cap</div>
+                <div>300 BNB</div>
+            </div>
+            <div>
+                <div>Presale Rate</div>
+                <div>920 000 WSKY per BNB</div>
+            </div>
+            <div>
+                <div>PanackeSwap Listing Rate</div>
+                <div>830 000 WSKY per BNB</div>
+            </div>
+            <div>
+                <div>PancakeSwap Liquidity %</div>
+                <div>75</div>
+            </div>
+            <div>
+                <div>Minimum Contribution</div>
+                <div>0.1 BNB</div>
+            </div>
+            <div>
+                <div>Maximum Contribuition</div>
+                <div>2 BNB</div>
+            </div>
+            <div>
+                <div>Presale Start Time</div>
+                <div>27 Sep 2021 at 17:00</div>
+            </div>
+            <div>
+                <div>Presale End Time</div>
+                <div>28 Sep 2021 at 17:00</div>
+            </div>
+            <div>
+                <div>Liquidity Unlock Date</div>
+                <div>27 Sep 2021 at 17:00</div>
+            </div>
+        </div>
     </div>
   </div>
 );

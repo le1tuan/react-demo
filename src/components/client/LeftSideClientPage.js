@@ -59,7 +59,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -89,7 +89,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -119,7 +119,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -150,7 +150,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -184,7 +184,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -216,7 +216,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -250,7 +250,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -284,7 +284,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
@@ -318,7 +318,7 @@ const LeftSideClientPage = () => {
           <div style={{ marginRight: '18px', color: '#757575' }}>
             <svg
               className="sc-bdVaJa fUuvxv"
-              fill="#000000"
+              fill="#757575"
               width="22px"
               height="22px"
               viewBox="0 0 1024 1024"
