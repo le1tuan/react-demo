@@ -1,0 +1,15 @@
+.nav-item-icon {
+    color: white;
+    border-radius: 50%;
+}
+.nav-item-icon:hover {
+    background-color: #1f8ee7;
+    color: white;
+}
+.right-size-main {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.link-buy {
+    border-radius: 24px;
+}
