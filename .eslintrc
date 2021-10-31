@@ -41,6 +41,7 @@
     "react/jsx-indent": "off",
     "no-multiple-empty-lines": "off",
     "jsx-a11y/alt-text": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/no-array-index-key": "off"
   }
 }
