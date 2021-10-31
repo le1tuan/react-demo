@@ -36,6 +36,11 @@
     "arrow-body-style": "off",
     "semi": "off",
     "react/prop-types": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "no-unused-vars": "off",
+    "react/jsx-indent": "off",
+    "no-multiple-empty-lines": "off",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   }
 }
