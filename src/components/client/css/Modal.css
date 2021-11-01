@@ -1,0 +1,26 @@
+.modal-content {
+    width: 610px;
+    margin-left: 110px;
+    padding: 0 20px;
+    border-radius: 10px;
+}
+.modal-body {
+    padding: 27px 0;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox-input:hover {
+    background-color: #f4fafe;
+    cursor: pointer;
+}
+.button-cancel:hover {
+    box-shadow: 3px 1px 3px 0px rgb(142 142 142 / 20%), 0px 1px 1px 0px rgb(243 243 243 / 14%), 0px 2px 1px -1px rgb(204 204 204 / 12%);
+    background-color: #d5d5d5;
+}
+.button-confirm:hover {
+    box-shadow: 3px 1px 3px 0px rgb(142 142 142 / 20%), 0px 1px 1px 0px rgb(243 243 243 / 14%), 0px 2px 1px -1px rgb(204 204 204 / 12%);
+    background-color: #1565c0;
+}
