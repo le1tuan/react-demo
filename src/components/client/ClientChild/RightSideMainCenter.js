@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap'
 import Clock from './Clock';
 import '../css/RightSideMainCenter.css'
-import {useState} from 'react';
+import { useEffect, useState } from 'react';
 import web3 from 'web3'
 
 const RightSideMainCenter = () => {
@@ -12,7 +12,7 @@ const RightSideMainCenter = () => {
 
         const value = '0.01';
         const wei = web3.utils.toWei(value);
-        const toHext = web3.utils.toHex(wei)
+        const toHext = web3.utils.toHex(wei);
 
         try {
             const transactionParameters = {
@@ -38,6 +38,23 @@ const RightSideMainCenter = () => {
             setSendLoading(false)
         }
     }
+    const [number, setNumber] = useState(10);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            let num = (Math.random()).toFixed(3);
+            let randomNumber = Number(num*10);
+            let distance = Number((number + randomNumber).toFixed(3));
+            if(distance < 300) {
+                setNumber(distance)
+            }
+        },500);
+        return () => {
+            if (interval) {
+                clearInterval(interval)
+            }
+        }
+    }, [number])
 
     return (
         <div style={{
@@ -60,10 +77,10 @@ const RightSideMainCenter = () => {
                     That is a first in the DeFi
                 </div>
                 <div style={{ textAlign: 'center', marginTop: '25px', marginBottom: '25px' }}>
-                    <div>195/300 BNB Raised</div>
+                    <div>{number}/300 BNB Raised</div>
                     <div className="d-flex align-items-center justify-content-center" style={{ width: '367.75px', height: '4px', marginLeft: '190px' }}>
-                        <div style={{ width: '239px', height: '4px', backgroundColor: '#2196f3' }} />
-                        <div style={{ width: '128.75px', height: '4px', backgroundColor: '#e0e0e0' }} />
+                        <div style={{ width: `${number + 40}px`, height: '4px', backgroundColor: '#2196f3' }} />
+                        <div style={{ width: `${367 - number - 40}px`, height: '4px', backgroundColor: '#e0e0e0' }} />
                     </div>
                 </div>
                 <div className="d-flex align-items-center flex-column justify-content-center" style={{ marginBottom: '30px', fontFamily: 'Open Sans, sans-serif' }}>
