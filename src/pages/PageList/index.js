@@ -8,6 +8,7 @@ import {
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import AdminWrapper from './AdminWrapper';
+import { axiosGet } from 'src/utils/AxiosAPI';
 const axios = require('axios');
 
 
@@ -101,7 +102,7 @@ const PageList = () => {
   };
 
   useEffect(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_API}/admin/token/getAll`)
+    const { data } = await axiosGet('/admin/token/getAll')
     setTableData(data.token);
     return () => {
     }

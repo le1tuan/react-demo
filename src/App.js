@@ -6,7 +6,8 @@ import theme from './theme';
 import routes from './routes';
 require('dotenv').config()
 const App = () => {
-  const content = useRoutes(routes);
+
+  const content = useRoutes(routes({ isLogin: (localStorage.getItem('token') ? true : false) }));
 
   return (
     <StyledEngineProvider injectFirst>
