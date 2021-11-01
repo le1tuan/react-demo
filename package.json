@@ -7,15 +7,12 @@
   "scripts": {
     "eslint": "eslint ./src",
     "eslint-fix": "eslint --fix ./src",
-    "start": "eslint ./ --fix && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "lint-fix": "eslint ./ --fix"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -35,11 +32,13 @@
     "@material-ui/core": "^5.0.0-beta.5",
     "@material-ui/icons": "^5.0.0-beta.5",
     "@material-ui/styles": "^5.0.0-beta.5",
+    "bn.js": "^5.2.0",
     "bootstrap": "^4.6.0",
     "chart.js": "^3.5.1",
     "formik": "^2.1.5",
     "history": "^5.0.0",
     "moment": "^2.27.0",
+    "npm": "^8.1.2",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -53,6 +52,7 @@
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "^4.0.3",
     "uuid": "^8.3.0",
+    "web3": "^1.6.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {

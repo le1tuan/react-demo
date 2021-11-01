@@ -9,6 +9,9 @@ import NotFound from './pages/NotFound';
 import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
+import PageList from './pages/PageList'
+import PageDetail from './pages/PageList/PageDetail';
+import PageCreateForm from './pages/PageList/PageCreateForm';
 import ClientPage from './components/client/ClientPage';
 import PageList from './pages/PageList'
 import PageDetail from './pages/PageList/PageDetail';
@@ -39,6 +42,14 @@ const routes = [
     ]
   },
   {
+    path: '/admin',
+    element: <DashboardLayout />,
+    children: [
+      { path: 'page', element: <PageList /> },
+      { path: 'page/:id', element: <PageDetail /> },
+      { path: 'create/page', element: <PageCreateForm /> }
+    ]
+  }, {
     path: 'aaa',
     element: <ClientPage />
   },
