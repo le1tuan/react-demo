@@ -34,7 +34,7 @@ const routes = [
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: '404', element: <NotFound /> },
-      { path: '/', element: <Navigate to="/aaa" /> },
+      { path: '/', element: <Navigate to="/defipresale" /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
@@ -47,7 +47,7 @@ const routes = [
       { path: 'create/page', element: <PageCreateForm /> }
     ]
   }, {
-    path: '/aaa',
+    path: '/defipresale',
     element: <ClientPage />
   }
 ];
