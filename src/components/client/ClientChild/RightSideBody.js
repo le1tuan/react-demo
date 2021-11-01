@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../css/RightSideBody.css';
+import web3 from 'web3-utils'
 
 
 const RightSideBody = () => {
@@ -12,8 +13,13 @@ const RightSideBody = () => {
 
   const handleConnectWallet = async () => {
     if (window.ethereum) {
+      const defaultNetwork = '56'
       try {
         const result = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const switchNetwork = await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: web3.toHex(defaultNetwork) }]
+        })
         if (result && result[0]) {
           setAddr(result)
           console.log(result)

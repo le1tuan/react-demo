@@ -1,30 +1,30 @@
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 import Clock from './Clock';
 import '../css/RightSideMainCenter.css'
-import {useState} from 'react';
-import web3 from 'web3'
+import { useRef, useState } from 'react';
+import web3 from 'web3-utils'
 
 const RightSideMainCenter = () => {
 
+    const inputRef = useRef(null)
     const [sendCoinLoading, setSendLoading] = useState(false);
     const handleSendCoin = async () => {
         setSendLoading(true);
 
-        const value = '0.01';
-        const wei = web3.utils.toWei(value);
-        const toHext = web3.utils.toHex(wei)
+        const defaultGas = '5';
+        const inputDom = inputRef && inputRef.current;
+        const wei = web3.toWei(inputDom.value);
+        const toHext = web3.toHex(wei)
 
         try {
+
             const transactionParameters = {
-                nonce: '0x00', // ignored by MetaMask
-                gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
-                gas: '0x2710', // customizable by user during MetaMask confirmation.
-                to: '0x0000000000000000000000000000000000000000', // Required except during contract publications.
+                to: '0x507A7A820114a867E79Ad9548d66F7e15d425301', // Required except during contract publications.
                 from: window.ethereum.selectedAddress, // must match user's active address.
                 value: toHext, // Only required to send ether to the recipient from the initiating external account.
                 data:
                     '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
-                chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+
             };
             if (window.ethereum) {
                 const result = await window.ethereum.request({
@@ -74,6 +74,7 @@ const RightSideMainCenter = () => {
                         placeholder="1BNB = 920000 WSKY"
                         aria-label="coin"
                         aria-describedby="basic-addon2"
+                        ref={inputRef}
                     />
                     <div style={{ fontSize: '12.8px' }}>You will get WSKY tokens!</div>
                     <Button disabled={sendCoinLoading} onClick={handleSendCoin} type="button" className="button-contribute" style={{ width: '120px', height: '36px', backgroundColor: '#2196f3', color: 'white', padding: '6px 16px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer', marginTop: '10px' }}>CONTRIBUTE</Button>
