@@ -1,10 +1,9 @@
 import RightSideLeftMain from './RightSideLeftMain';
 import RightSideRightMain from './RightSideRightMain';
-import '../css/RightSideMain.css';
 import RightSideMainCenter from './RightSideMainCenter';
 
 const RightSideMain = () => (
-  <div className="right-side-main d-flex" style={{ margin: '15px', padding: '20px' }}>
+  <div className="right-side-main d-flex" style={{ padding: '23px' }}>
     <RightSideLeftMain />
     <RightSideMainCenter />
     <RightSideRightMain />

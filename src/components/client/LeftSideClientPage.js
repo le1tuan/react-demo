@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-bootstrap';
 import './css/LeftSideClientPage.css';
+import { flushSync } from 'react-dom';
 
 const LeftSideClientPage = () => {
   const [firstOpen, setFirstOpen] = React.useState(true);
@@ -12,21 +13,51 @@ const LeftSideClientPage = () => {
 
   const handleFirstClick = () => {
     setFirstOpen(!firstOpen);
+    setSecondOpen(true);
+    setThirdOpen(true);
+    setFourOpen(true);
+    setFiveOpen(true);
+    setSixOpen(true);
   };
   const handleSecondClick = () => {
     setSecondOpen(!secondOpen);
+    setFirstOpen(true);
+    setThirdOpen(true);
+    setFourOpen(true);
+    setFiveOpen(true);
+    setSixOpen(true);
   };
   const handleThirdClick = () => {
     setThirdOpen(!thirdOpen);
+    setFirstOpen(true);
+    setSecondOpen(true);
+    setFourOpen(true);
+    setFiveOpen(true);
+    setSixOpen(true);
   };
   const handleFourClick = () => {
     setFourOpen(!fourOpen);
+    setFirstOpen(true);
+    setSecondOpen(true);
+    setThirdOpen(true);
+    setFiveOpen(true);
+    setSixOpen(true);
   };
   const handleFiveClick = () => {
     setFiveOpen(!fiveOpen);
+    setFirstOpen(true);
+    setSecondOpen(true);
+    setThirdOpen(true);
+    setFourOpen(true);
+    setSixOpen(true);
   };
   const handleSixClick = () => {
     setSixOpen(!sixOpen);
+    setFirstOpen(true);
+    setSecondOpen(true);
+    setThirdOpen(true);
+    setFourOpen(true);
+    setFiveOpen(true);
   };
   return (
     <div className="left-size-main" style={{ maxWidth: '240px', backgroundColor: 'white' }}>
@@ -34,7 +65,7 @@ const LeftSideClientPage = () => {
       <NavLink
         className="d-flex justify-content-center align-items-center p-0"
         style={{
-          width: '228px', height: '48px', padding: '16px 0 16px 24px', cursor: 'pointer', fontWeight: 'bold', backgroundColor: '#E6F6FF'
+          width: '240px', height: '64px', padding: '16px 0 16px 24px', cursor: 'pointer', fontWeight: 'bold', backgroundColor: '#E6F6FF'
         }}
       >
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEzNCIgdmlld0JveD0iMCAwIDEzNCAxMzQiPgogIDxkZWZzPgogICAgPGZpbHRlciBpZD0iUmVjdGFuZ2xlXzEiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTM0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8ZmVPZmZzZXQgZHk9IjMiIGlucHV0PSJTb3VyY2VBbHBoYSIvPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzIiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMC4xNjEiLz4KICAgICAgPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJibHVyIi8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxnIGlkPSJHcm91cF8zIiBkYXRhLW5hbWU9Ikdyb3VwIDMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIgLTIpIj4KICAgIDxnIGlkPSJHcm91cF8xIiBkYXRhLW5hbWU9Ikdyb3VwIDEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcgOCkiPgogICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAtOSwgLTYpIiBmaWx0ZXI9InVybCgjUmVjdGFuZ2xlXzEpIj4KICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzEtMiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMSIgd2lkdGg9IjExNiIgaGVpZ2h0PSIxMTYiIHJ4PSIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOSA2KSIgZmlsbD0iI2ZmZiIvPgogICAgICA8L2c+CiAgICAgIDxnIGlkPSJHcm91cF8xLTIiIGRhdGEtbmFtZT0iR3JvdXAgMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYuMjYxIDM1LjUyNCkiIG9wYWNpdHk9IjAuOTk5IiBzdHlsZT0iaXNvbGF0aW9uOiBpc29sYXRlIj4KICAgICAgICA8dGV4dCBpZD0iRHgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjI2MSAzNi40NzYpIiBmb250LXNpemU9IjQ1IiBmb250LWZhbWlseT0iQmFobnNjaHJpZnQiIGZvbnQtd2VpZ2h0PSI2MDAiPjx0c3BhbiB4PSIwIiB5PSIwIj5EeDwvdHNwYW4+PC90ZXh0PgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" style={{ width: '30px', height: '30px', marginRight: '10px' }} alt="icon" />
@@ -166,6 +197,17 @@ const LeftSideClientPage = () => {
             {firstOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {firstOpen ? null : (
+          <div style={{ width: '235px',
+            height: '128px',
+            padding: '8px 0',
+            margin: '0 0 0 -15px' }}
+          >
+            <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>LAUNCHPAD</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Dashboard</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Start or Manage</div>
+          </div>
+        )}
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -198,6 +240,17 @@ const LeftSideClientPage = () => {
             {secondOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {secondOpen ? null : (
+          <div style={{ width: '235px',
+            height: '128px',
+            padding: '8px 0',
+            margin: '0 0 0 -15px' }}
+          >
+            <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>LAUNCHPAD</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Dashboard</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Start or Manage</div>
+          </div>
+        )}
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -232,6 +285,17 @@ const LeftSideClientPage = () => {
             {thirdOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {thirdOpen ? null : (
+          <div style={{ width: '235px',
+            height: '128px',
+            padding: '8px 0',
+            margin: '0 0 0 -15px' }}
+          >
+            <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>LOCK OR MANAGE ASSETS</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Lock LP Tokens</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Lock Tokens</div>
+          </div>
+        )}
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -266,6 +330,17 @@ const LeftSideClientPage = () => {
             {fourOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {fourOpen ? null : (
+          <div style={{ width: '235px',
+            height: '128px',
+            padding: '8px 0',
+            margin: '0 0 0 -15px' }}
+          >
+            <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>PARTNER PORTALS</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Audit</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>KYC</div>
+          </div>
+        )}
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -300,6 +375,17 @@ const LeftSideClientPage = () => {
             {fiveOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {fiveOpen ? null : (
+          <div style={{ width: '235px',
+            height: '128px',
+            padding: '8px 0',
+            margin: '0 0 0 -15px' }}
+          >
+            <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>SALE TOKEN TOOLS</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>Fee Management</div>
+            <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>ETH BCS Bridge</div>
+          </div>
+        )}
         <NavLink
           className="item-nav d-flex align-items-center"
           style={{
@@ -332,6 +418,46 @@ const LeftSideClientPage = () => {
             {sixOpen ? <i className="fas fa-chevron-down" /> : <i className="fas fa-chevron-up" />}
           </div>
         </NavLink>
+        {sixOpen ? null : (
+          <div>
+            <div style={{ width: '235px',
+              height: '128px',
+              padding: '8px 0',
+              margin: '0 0 0 -15px' }}
+            >
+              <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>V2.9</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLaunch</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLock</div>
+            </div>
+            <div style={{ width: '235px',
+              height: '128px',
+              padding: '8px 0',
+              margin: '0 0 0 -15px' }}
+            >
+              <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>V2.5</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLaunch</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLock</div>
+            </div>
+            <div style={{ width: '235px',
+              height: '128px',
+              padding: '8px 0',
+              margin: '0 0 0 -15px' }}
+            >
+              <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>V1 DEFI</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLaunch</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLock</div>
+            </div>
+            <div style={{ width: '235px',
+              height: '128px',
+              padding: '8px 0',
+              margin: '0 0 0 -15px' }}
+            >
+              <div style={{ width: '235px', height: '28px', padding: '0 16px 0 80px', color: '#00BFA5', fontSize: '10px', fontWeight: 'bold', lineHeight: '28px' }}>V1 STANDARD</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLaunch</div>
+              <div className="item-nav" style={{ width: '235px', height: '28px', margin: '4px 0', padding: '4px 16px 0 70px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer' }}>DxLock</div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

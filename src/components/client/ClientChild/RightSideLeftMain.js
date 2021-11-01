@@ -2,7 +2,7 @@ import '../css/RightSideLeftMain.css';
 
 const RightSideLeftMain = () => (
   <div style={{
-    width: '379.75px', backgroundColor: 'white', padding: '20px', borderRadius: '8px'
+    width: '379.75px', backgroundColor: 'white', padding: '20px', borderRadius: '8px', margin: '12px'
   }}
   >
     <div style={{ height: '40px', marginBottom: '16px' }} className="d-flex justify-content-center align-items-center">

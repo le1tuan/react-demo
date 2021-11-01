@@ -1,123 +1,60 @@
+import { Button } from 'react-bootstrap'
 import Clock from './Clock';
+import '../css/RightSideMainCenter.css'
 
 const RightSideMainCenter = () => (
   <div style={{
-    width: '783.5px', backgroundColor: 'white', padding: '20px', borderRadius: '8px'
+    width: '783.5px', backgroundColor: 'white', padding: '20px', borderRadius: '8px', margin: '12px'
   }}
   >
     <div>
-      <div>
-        <div>image</div>
+      <div className="d-flex align-items-center" style={{ marginBottom: '50px', width: '65px', height: '60px' }}>
         <div>
-          <div>WSKy</div>
-          <div>Whiskey</div>
+          <img src="../images/logo-original.png" alt="image" style={{ width: '55px', height: '55px', margin: '0 10px 5px 0' }} />
+        </div>
+        <div>
+          <div style={{ height: '38px', fontSize: '16px', padding: '7px' }}>WSKy</div>
+          <div style={{ height: '28px', fontSize: '16px', padding: '4px 0 0 3px' }}>Whiskey</div>
         </div>
       </div>
-      <div>
-        ✔️Rewards in BNB for
-        holders ✔️Active chat ✔️Representative site
-        ✔️Devs have been working on the project for over
-        2 months ✔️Dev Doxxed ✔️Transparent and audited
-        contract ✔️Huge Marketing plan with $150 000
-        ✔️AIRDROP 100 BNB 💰💰💰 ✔️Shill rewards ⚜️Just
-        Relax 💎Hold $WSKY 🥃Drink Whiskey 💵Get Richer
-        💈Chill....
+      <div style={{ fontSize: '12.8px', borderBottom: '1px solid #e0e0e0', paddingBottom: '25px' }}>
+        1Pool.finance is a decentralized Money Market Protocol for lending and yield aggregation of LP tokens and other standard digital assets.
+        1Pool lending protocol collateralizes LP tokens, and make it possible for the borrowers to take a loan against selected LP token collateral.
+        That is a first in the DeFi
       </div>
-      <div>
-        <div>
-          <span>Presale Address:</span>
-          <span>0x123123123123</span>
-        </div>
-        <div>
-          <span>Token Address:</span>
-          <span>0x123123123123</span>
-        </div>
-        <div>
-          Do not send BNB
-          to the token address!
-        </div>
-        <div>
-
-          ⚠️ This Token uses a Custom Contract
-
-        </div>
-      </div>
-      <div>
+      <div style={{ textAlign: 'center', marginTop: '25px', marginBottom: '25px' }}>
         <div>195/300 BNB Raised</div>
-        <div>
-          <span />
-          <span />
+        <div className="d-flex align-items-center justify-content-center" style={{ width: '367.75px', height: '4px', marginLeft: '190px' }}>
+          <div style={{ width: '239px', height: '4px', backgroundColor: '#2196f3' }} />
+          <div style={{ width: '128.75px', height: '4px', backgroundColor: '#e0e0e0' }} />
         </div>
       </div>
-      <Clock />
-        <div>
-            <div>
-                <div>Your Contributed Amount:</div>
-                <div>0.0 BNB</div>
-            </div>
-            <div>
-                <div>Your Reserved Token</div>
-                <div>0 WSDY</div>
-            </div>
+      <div className="d-flex align-items-center flex-column justify-content-center" style={{ marginBottom: '30px', fontFamily: 'Open Sans, sans-serif' }}>
+        <input
+          style={{ width: '365.75px', overflow: 'hidden', fontSize: '14px', borderRadius: '10px' }}
+          type="text"
+          className="form-control"
+          placeholder="1BNB = 920000 WSKY"
+          aria-label="coin"
+          aria-describedby="basic-addon2"
+        />
+        <div style={{ fontSize: '12.8px' }}>You will get WSKY tokens!</div>
+        <Button type="button" className="button-contribute" style={{ width: '120px', height: '36px', backgroundColor: '#2196f3', color: 'white', padding: '6px 16px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer', marginTop: '10px' }}>CONTRIBUTE</Button>
+      </div>
+      <div style={{ textAlign: 'center', borderBottom: '1px solid #e0e0e0', paddingBottom: '25px' }}>
+        <div style={{ fontSize: '12.8px' }}>Presale Ends in:</div>
+        <Clock />
+      </div>
+      <div className="d-flex align-items-center" style={{ padding: '14px', fontSize: '12.8px' }}>
+        <div className="item-center" style={{ width: '375.75px', height: '66px', textAlign: 'center' }}>
+          <div>Your Contributed Amount:</div>
+          <div>0.0 BNB</div>
         </div>
-        <div>
-            <div>
-                <div>Sale ID</div>
-                <div>90</div>
-            </div>
-            <div>
-                <div>Total Supply</div>
-                <div>1 000 000 000 WSKY</div>
-            </div>
-            <div>
-                <div>Tokens For Presale</div>
-                <div>276 000 000 WSKY</div>
-            </div>
-            <div>
-                <div>Tokens For Liquidity</div>
-                <div>186 750 000 WSKY</div>
-            </div>
-            <div>
-                <div>Soft Cap</div>
-                <div>150 BNB</div>
-            </div>
-            <div>
-                <div>Hard Cap</div>
-                <div>300 BNB</div>
-            </div>
-            <div>
-                <div>Presale Rate</div>
-                <div>920 000 WSKY per BNB</div>
-            </div>
-            <div>
-                <div>PanackeSwap Listing Rate</div>
-                <div>830 000 WSKY per BNB</div>
-            </div>
-            <div>
-                <div>PancakeSwap Liquidity %</div>
-                <div>75</div>
-            </div>
-            <div>
-                <div>Minimum Contribution</div>
-                <div>0.1 BNB</div>
-            </div>
-            <div>
-                <div>Maximum Contribuition</div>
-                <div>2 BNB</div>
-            </div>
-            <div>
-                <div>Presale Start Time</div>
-                <div>27 Sep 2021 at 17:00</div>
-            </div>
-            <div>
-                <div>Presale End Time</div>
-                <div>28 Sep 2021 at 17:00</div>
-            </div>
-            <div>
-                <div>Liquidity Unlock Date</div>
-                <div>27 Sep 2021 at 17:00</div>
-            </div>
+        <div className="item-center" style={{ width: '375.75px', height: '66px', textAlign: 'center' }}>
+          <div>Your Reserved Token</div>
+          <div>0 WSDY</div>
         </div>
+      </div>
     </div>
   </div>
 );
