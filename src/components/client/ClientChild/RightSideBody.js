@@ -56,14 +56,14 @@ const RightSideBody = () => {
         >
           <div
             style={{
-              backgroundColor: '#2196f3', width: '224px', marginTop: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px'
+              backgroundColor: '#2196f3', width: '224px', marginTop: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px', cursor: 'pointer'
             }}
             onClick={handleConnectWallet}
           >
             CONNECT WALLET TO START
           </div>
           <div style={{
-            backgroundColor: '#00bfa5', width: '152px', marginBottom: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px'
+            backgroundColor: '#00bfa5', width: '152px', marginBottom: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px', cursor: 'pointer'
           }}
           >
             WALLETCONNECT
