@@ -103,13 +103,9 @@ const PageList = () => {
   useEffect(async () => {
     const { data } = await axios.get(`${process.env.REACT_APP_SERVER_API}/admin/token/getAll`)
     setTableData(data.token);
-
     return () => {
     }
   }, [])
-
-
-  console.log('order', order, orderBy)
 
   return (
     <AdminWrapper title="Danh sách trang" subtitle="Danh sach cac trang">
