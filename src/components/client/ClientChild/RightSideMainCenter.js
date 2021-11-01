@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 import Clock from './Clock';
 import '../css/RightSideMainCenter.css'
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import web3 from 'web3-utils'
 
 const RightSideMainCenter = () => {
