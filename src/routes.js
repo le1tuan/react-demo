@@ -13,8 +13,6 @@ import PageList from './pages/PageList'
 import PageDetail from './pages/PageList/PageDetail';
 import PageCreateForm from './pages/PageList/PageCreateForm';
 import ClientPage from './components/client/ClientPage';
-import PageList from './pages/PageList'
-import PageCreateForm from './pages/PageList/PageCreateForm';
 
 const routes = [
   {
