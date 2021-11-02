@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import web3 from 'web3'
 import '../css/RightSideBody.css';
+import web3 from 'web3-utils'
 
 
 const RightSideBody = () => {
@@ -10,12 +10,16 @@ const RightSideBody = () => {
     }
     return ''
   });
-  const [sendCoinLoading, setSendLoading] = useState(false);
 
   const handleConnectWallet = async () => {
     if (window.ethereum) {
+      const defaultNetwork = '56'
       try {
         const result = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const switchNetwork = await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: web3.toHex(defaultNetwork) }]
+        })
         if (result && result[0]) {
           setAddr(result)
           console.log(result)
@@ -26,6 +30,10 @@ const RightSideBody = () => {
     }
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53b1d2086f689a36c59220e440b515a65e6c2b4f
 
   useEffect(() => {
     if (!window.ethereum) {
@@ -51,26 +59,18 @@ const RightSideBody = () => {
         >
           <div
             style={{
-              backgroundColor: '#2196f3', width: '224px', marginTop: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px'
+              backgroundColor: '#2196f3', width: '224px', marginTop: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px', cursor: 'pointer'
             }}
             onClick={handleConnectWallet}
           >
             CONNECT WALLET TO START
           </div>
           <div style={{
-            backgroundColor: '#00bfa5', width: '152px', marginBottom: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px'
+            backgroundColor: '#00bfa5', width: '152px', marginBottom: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px', cursor: 'pointer'
           }}
           >
             WALLETCONNECT
           </div>
-          {currentAddr && <button style={{
-            backgroundColor: '#00bfa5', width: '152px', marginBottom: '5px', height: '36px', borderRadius: '24px', textAlign: 'center', paddingTop: '6px'
-          }}
-            onClick={handleSendCoin}
-            disabled={sendCoinLoading}
-          >
-            {sendCoinLoading ? 'Processing' : 'Send coin'}
-          </button>}
         </div>
       </div>
     )

