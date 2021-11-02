@@ -149,7 +149,7 @@ const PageList = () => {
                           </Button>
                           <Button
                             onClick={() => {
-                              navigate(`/admin/page/${data.tokenName}`)
+                              navigate(`/admin/token/${data.tokenName}`)
                             }}
                             size="small"
                             variant="contained"

@@ -30,10 +30,6 @@ const RightSideBody = () => {
     }
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 53b1d2086f689a36c59220e440b515a65e6c2b4f
 
   useEffect(() => {
     if (!window.ethereum) {

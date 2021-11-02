@@ -7,6 +7,8 @@ import {
   Link,
   TextField,
   Input,
+  Snackbar,
+  Alert
 } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
@@ -15,12 +17,12 @@ import { Formik } from 'formik';
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import AdminWrapper from './AdminWrapper';
 import camelCaseToTitleCase from '../../utils/textUtil'
-const axios = require('axios');
-
+import { axiosGet, axiosPost } from 'src/utils/AxiosAPI';
 // /admin/token/get?name=
 
 const PageDetail = () => {
   const [dataDetail, setDataDetail] = useState({});
+  const [snackbarOpen, setSnackbar] = useState(false);
   const tokenName = useParams().id;
   const navigate = useNavigate();
 
@@ -30,17 +32,26 @@ const PageDetail = () => {
     }
   }, [])
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbar(false);
+  };
+
   const fetchDataDetail = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_API}/admin/token/get?name=${tokenName}`)
-    setDataDetail(data.token);
+    const { data } = await axiosGet(`admin/token/get?name=${tokenName}`);
+    const { createdAt, ...rest } = data.token;
+    setDataDetail({ ...rest });
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post(`${process.env.REACT_APP_SERVER_API}/admin/token/update/${dataDetail.id}`, dataDetail)
+    const { data } = await axiosPost(`admin/token/update/${dataDetail.id}`, dataDetail)
     if (!data.isError) {
       await fetchDataDetail()
+      setSnackbar(true);
+      window.scrollTo({ x: 0, y: 0 });
     }
-    console.log(data)
   }
 
   const handleInputChange = (e, key) => {
@@ -52,6 +63,16 @@ const PageDetail = () => {
       <Helmet>
         <title>Thông tin giao dịch</title>
       </Helmet>
+      < Snackbar
+        open={snackbarOpen}
+        autoHideDuration={5000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Successful
+        </Alert>
+      </Snackbar>
       <div style={{ padding: 20 }}>
         <div>
           <div style={{ marginBottom: 10, display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -97,17 +118,11 @@ const PageDetail = () => {
               >
                 Save
               </Button>
-              <Button
-                size="small"
-                variant="outlined"
-              >
-                Cancel
-              </Button>
             </Box>
           </form>
         </div>
       </div>
-    </AdminWrapper>
+    </AdminWrapper >
   )
 }
 

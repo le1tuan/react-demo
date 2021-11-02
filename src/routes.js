@@ -13,8 +13,9 @@ import PageList from './pages/PageList'
 import PageDetail from './pages/PageList/PageDetail';
 import PageCreateForm from './pages/PageList/PageCreateForm';
 import ClientPage from './components/client/ClientPage';
-
-
+import PageCreateWallet from './pages/PageList/PageCreateWallet';
+import Wallet from './pages/PageList/Wallet';
+import Transaction from './pages/PageList/Transaction';
 const routes = ({ isLogin }) => {
   return [
     {
@@ -44,9 +45,12 @@ const routes = ({ isLogin }) => {
       path: '/admin',
       element: isLogin ? <DashboardLayout /> : <Navigate to="/login" />,
       children: [
-        { path: 'page', element: <PageList /> },
-        { path: 'page/:id', element: <PageDetail /> },
-        { path: 'create/page', element: <PageCreateForm /> }
+        { path: 'token', element: <PageList /> },
+        { path: 'token/:id', element: <PageDetail /> },
+        { path: 'create/token', element: <PageCreateForm /> },
+        { path: 'wallet', element: <Wallet /> },
+        { path: 'create/wallet', element: <PageCreateWallet /> },
+        { path: 'transaction', element: <Transaction /> },
       ]
     }, {
       path: '/defipresale',

@@ -76,15 +76,31 @@ const items = [
   //   title: 'DV3'
   // },
   {
-    href: '/admin/page',
+    href: '/admin/token',
     icon: UserPlusIcon,
-    title: 'Manage Page'
+    title: 'Manage Token'
   },
   {
-    href: '/admin/create/page',
+    href: '/admin/create/token',
     icon: UserPlusIcon,
-    title: 'Create New Page'
+    title: 'Create New Token'
+  },
+  {
+    href: '/admin/wallet',
+    icon: UserPlusIcon,
+    title: 'Manage Wallet'
+  },
+  {
+    href: '/admin/create/wallet',
+    icon: UserPlusIcon,
+    title: 'Create New Wallet'
+  },
+  {
+    href: '/admin/transaction',
+    icon: UserPlusIcon,
+    title: 'Manage Transaction'
   }
+
 ];
 
 const DashboardSidebar = ({ onMobileClose, openMobile }) => {
