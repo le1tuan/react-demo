@@ -14,7 +14,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import AdminWrapper from './AdminWrapper';
-const axios = require('axios');
+import { axiosPost } from 'src/utils/AxiosAPI';
 
 const data = {
   id: 2,
@@ -36,7 +36,7 @@ const PageCreateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(dataDetail)
-    const { data } = await axios.post(`${process.env.REACT_APP_SERVER_API}/admin/token/create`, dataDetail)
+    const { data } = await axiosPost(`${process.env.REACT_APP_SERVER_API}/admin/token/create`, dataDetail)
     console.log(data)
   }
   return (
