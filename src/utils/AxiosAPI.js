@@ -20,7 +20,7 @@ myAxios.interceptors.response.use(function (response) {
         error.config.headers['Authorization'] = 'Bearer ' + JSON.stringify(data.user);
         error.config.baseURL = undefined;
         return myAxios.request(error.config);
-    } else if (error.response && error.response.status && error.response.status === 6969) {
+    } else if (error.response && error.response.status && error.response.status === 477) {
         localStorage.removeItem('token')
         window.location = "/login"
     } else {
